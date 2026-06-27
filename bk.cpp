@@ -706,7 +706,9 @@ public:
 int main(void)
 {
     Vm vm;
-    auto stdlib = read_file_to_string("std.bk");
+    auto home = std::string{getenv("HOME")};
+    assert(home.size() > 0);
+    auto stdlib = read_file_to_string(home + "/.config/bk/std.bk");
     std::streambuf* original_buf = std::cout.rdbuf(nullptr);
     for (auto s : std::views::split(stdlib, '\n'))
     {

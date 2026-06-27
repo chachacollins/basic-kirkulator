@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -ex
+
+cp bk ~/.local/bin
+mkdir -p ~/.config/bk/
+cp std.bk ~/.config/bk
