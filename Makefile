@@ -2,7 +2,8 @@ CXX=g++
 CFLAGS=-Wall -Wextra -std=c++20 -O2 -ggdb -lreadline -fpermissive
 
 install: bk
-	./install
+	mkdir -p $(PREFIX)/bin
+	cp bk $(PREFIX)/bin
 
 bk: bk.cpp
 	$(CXX) $(CFLAGS) bk.cpp -o bk
